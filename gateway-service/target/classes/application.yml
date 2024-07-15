@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: basket-service
+          uri: lb://basket-service
+          predicates:
+            - Path=/api/basket/**
+        - id: client-service
+          uri: lb://client-service
+          predicates:
+            - Path=/api/client/**
+        - id: product-service
+          uri: lb://product-service
+          predicates:
+            - Path=/api/product/**
+        - id: opinion-service
+          uri: lb://opinion-service
+          predicates:
+            - Path=/api/opinion/**
+        - id: pedido-service
+          uri: lb://pedido-service
+          predicates:
+            - Path=/api/pedido/**
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/api/auth/**

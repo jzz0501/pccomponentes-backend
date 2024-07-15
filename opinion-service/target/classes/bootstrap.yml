@@ -1,0 +1,13 @@
+spring:
+
+  application:
+    name: opinion-service
+
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+        heartbeat:
+          enabled: true
