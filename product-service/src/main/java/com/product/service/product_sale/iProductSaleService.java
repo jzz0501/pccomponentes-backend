@@ -1,6 +1,6 @@
 package com.product.service.product_sale;
 
-import com.data.product.ProductSaleDTO;
+import com.data.product.sale.ProductSaleDTO;
 
 public interface iProductSaleService {
 

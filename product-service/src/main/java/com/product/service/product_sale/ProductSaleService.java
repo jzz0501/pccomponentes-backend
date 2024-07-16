@@ -1,6 +1,6 @@
 package com.product.service.product_sale;
 
-import com.data.product.ProductSaleDTO;
+import com.data.product.sale.ProductSaleDTO;
 import com.product.repository.ProductSaleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

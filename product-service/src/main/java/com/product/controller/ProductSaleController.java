@@ -1,6 +1,6 @@
 package com.product.controller;
 
-import com.data.product.ProductSaleDTO;
+import com.data.product.sale.ProductSaleDTO;
 import com.product.service.product_sale.ProductSaleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

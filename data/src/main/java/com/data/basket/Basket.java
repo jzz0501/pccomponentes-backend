@@ -17,11 +17,11 @@ public class Basket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "client_id")
-    private Long clientId;
+    @Column(name = "id_client")
+    private Long id_client;
 
-    @Column(name = "product_id")
-    private Long productId;
+    @Column(name = "id_product")
+    private Long id_product;
 
     @Column(name = "quantity")
     private Integer quantity;

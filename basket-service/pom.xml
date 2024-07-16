@@ -45,6 +45,11 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.api</groupId>
+            <artifactId>common-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
             <groupId>com.data</groupId>
             <artifactId>data</artifactId>
             <version>1.0.0</version>

@@ -14,7 +14,4 @@ public interface ClientAPI {
     @GetMapping("/{id_client}")
     ClientDTO getClientById(@PathVariable(value = "id_client") Long id_client);
 
-    @GetMapping
-    ClientDTO getClientByEmailAndPassword(@RequestParam(value = "email") String email, @RequestParam(value = "password") String password);
-
 }

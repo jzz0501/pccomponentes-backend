@@ -1,7 +1,7 @@
 package com.product.service.product_detail;
 
-import com.data.product.ProductDetail;
-import com.data.product.ProductDetailDTO;
+import com.data.product.detail.ProductDetail;
+import com.data.product.detail.ProductDetailDTO;
 import com.product.repository.ProductDetailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

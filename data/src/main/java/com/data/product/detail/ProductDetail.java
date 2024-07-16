@@ -1,5 +1,6 @@
-package com.data.product;
+package com.data.product.detail;
 
+import com.data.product.Product;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

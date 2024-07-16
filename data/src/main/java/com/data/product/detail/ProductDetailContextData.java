@@ -1,4 +1,4 @@
-package com.data.product;
+package com.data.product.detail;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,10 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductSaleContextData {
+public class ProductDetailContextData {
 
-    private Integer stock;
+    private String about;
 
-    private Integer sold;
+    private String specifications;
 
 }

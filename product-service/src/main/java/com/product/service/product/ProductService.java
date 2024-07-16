@@ -25,8 +25,18 @@ public class ProductService implements iProductService {
     }
 
     @Override
-    public Pagination<ProductDTO> findAllProductWithPagination() {
-        Page<ProductDTO> productDTOS = productRepository.findAll(PageRequest.of(0,10)).map(ProductDTO::new);
-        return new Pagination<>(productDTOS);
+    public List<ProductDTO> matchProductByName(String name) {
+        return productRepository
+                .matchByName(name)
+                .stream()
+                .map(ProductDTO::new)
+                .toList();
     }
+
+    @Override
+    public Pagination<ProductDTO> matchProductByNameWithPagination(String name) {
+        Page<ProductDTO> productDTOPage = productRepository.matchByName(name, PageRequest.of(0,10)).map(ProductDTO::new);
+        return new Pagination<>(productDTOPage);
+    }
+
 }

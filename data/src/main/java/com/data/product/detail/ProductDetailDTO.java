@@ -1,5 +1,6 @@
-package com.data.product;
+package com.data.product.detail;
 
+import com.data.product.ProductDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
