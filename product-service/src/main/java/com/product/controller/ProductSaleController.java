@@ -14,8 +14,18 @@ public class ProductSaleController {
     ProductSaleService productSaleService;
 
     @GetMapping("/{id_product}")
-    public ProductSaleDTO getProductDetailById(@PathVariable("id_product") Long id_product) {
+    public ProductSaleDTO getProductSaleById(@PathVariable("id_product") Long id_product) {
         return productSaleService.findProductSaleById(id_product);
+    }
+
+    @PostMapping("/stock/{id_product}/{quantity}")
+    public ProductSaleDTO postProductSaleStock(@PathVariable("id_product") Long id_product, @PathVariable("quantity") Integer quantity) {
+        return productSaleService.addProductSaleStockById(id_product, quantity);
+    }
+
+    @PostMapping("/sold/{id_product}/{quantity}")
+    public ProductSaleDTO postProductSaleSold(@PathVariable("id_product") Long id_product, @PathVariable("quantity") Integer quantity) {
+        return productSaleService.addProductSaleSoldById(id_product, quantity);
     }
 
 }

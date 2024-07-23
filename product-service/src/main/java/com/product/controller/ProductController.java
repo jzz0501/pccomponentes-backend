@@ -21,7 +21,7 @@ public class ProductController {
         return productService.findProductById(id_product);
     }
 
-    @GetMapping("/page/match-name/{name}")
+    @GetMapping("/pagination/match-name/{name}")
     public Pagination<ProductDTO> getProductPaginationByNameMatcher(@PathVariable("name") String name) {
         return productService.matchProductByNameWithPagination(name);
     }

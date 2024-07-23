@@ -10,6 +10,7 @@ import com.data.product.ProductDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -34,12 +35,35 @@ public class BasketService implements iBasketService {
         }
 
         Optional<Basket> optionalBasket = basketRepository.findByClientIdAndProductId(basket.getId_client(), basket.getId_product());
+        if(optionalBasket.isPresent()) {
+            Basket b = optionalBasket.get();
+            b.setQuantity(b.getQuantity() + basket.getQuantity());
+            return new BasketDTO(basketRepository.save(b), productDTO);
+        } else {
+            Basket b = basketRepository.save(new Basket(basket.getId(), basket.getId_client(), basket.getId_product(), basket.getQuantity()));
+            return new BasketDTO(basketRepository.save(b), productDTO);
+        }
+
+        /*
         Basket savedBasket = optionalBasket.map((currentBasket) -> {
             currentBasket.setQuantity(currentBasket.getQuantity() + basket.getQuantity());
             return basketRepository.save(currentBasket);
         }).orElse(basketRepository.save(new Basket(basket.getId(), basket.getId_client(), basket.getId_product(), basket.getQuantity())));
+        */
 
-        return new BasketDTO(savedBasket, productDTO);
     }
 
+    @Override
+    public List<BasketDTO> findBasketById(Long id_client) {
+        return basketRepository
+                .findByClientId(id_client)
+                .stream()
+                .map(basket -> new BasketDTO(basket, productAPI.getProductById(basket.getId_product())))
+                .toList();
+    }
+
+    @Override
+    public void removeBasketById(Long id_basket) {
+        basketRepository.deleteById(id_basket);
+    }
 }

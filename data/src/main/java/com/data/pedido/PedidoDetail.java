@@ -15,9 +15,9 @@ import java.math.BigDecimal;
 public class PedidoDetail {
 
     @Id
-    @Column(name = "pedido_id")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long pedidoId;
+    private Long id;
 
     @Column(name = "unit_price", precision = 10, scale = 2)
     private BigDecimal unitPrice;
@@ -25,11 +25,11 @@ public class PedidoDetail {
     @Column(name = "quantity")
     private Integer quantity;
 
-    @Column(name = "product_id")
-    private Long productId;
+    @Column(name = "id_product")
+    private Long id_product;
 
-    @OneToOne(cascade = CascadeType.ALL, optional = false)
-    @PrimaryKeyJoinColumn(name = "pedido_id", referencedColumnName = "id")
+    @ManyToOne(targetEntity = Pedido.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_pedido", referencedColumnName = "id")
     private Pedido pedido;
 
 }

@@ -6,4 +6,8 @@ public interface iProductSaleService {
 
     ProductSaleDTO findProductSaleById(Long id_product);
 
+    ProductSaleDTO addProductSaleStockById(Long id_product, Integer quantity);
+
+    ProductSaleDTO addProductSaleSoldById(Long id_product, Integer quantity);
+
 }

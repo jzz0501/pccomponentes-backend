@@ -24,10 +24,10 @@ public class Opinion {
     @Column(name = "score")
     private Integer score;
 
-    @Column(name = "product_id")
-    private Long productId;
+    @Column(name = "id_product")
+    private Long id_product;
 
-    @Column(name = "client_id")
-    private Long clientId;
+    @Column(name = "id_client")
+    private Long id_client;
 
 }
